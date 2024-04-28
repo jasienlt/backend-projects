@@ -5,6 +5,8 @@ import java.util.HashMap;
 
 public class Sort {
 
+	// Time complexity: O(n) where n = total frequency of 0s,1s,2s = in.length
+
 	public static ArrayList<Integer> pSort(int[] input) {
 		ArrayList<Integer> result = new ArrayList<Integer>();
 		HashMap<Integer,Integer> freq = new HashMap<>();
