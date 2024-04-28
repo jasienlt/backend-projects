@@ -5,6 +5,9 @@ import java.util.Arrays;
 public class LongestPrefix {
 
 	public static String longestPrefix(String[] in) {
+		
+		// Time complexity: O(nlog(n)) where n = in.length
+
 		Arrays.sort(in);
 		
 		// Sort the strings in array by lexicographical order
@@ -25,7 +28,7 @@ public class LongestPrefix {
 		return firstString.substring(0,pointer);
 	}
 	public static void main(String[] args) {
-		String[] i = {"flow","flower","flaw"};
+		String[] i = {"dog","flower","flaw"};
 		System.out.println(longestPrefix(i));
 	}
 }
