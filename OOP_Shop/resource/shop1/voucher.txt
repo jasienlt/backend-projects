@@ -1,0 +1,4 @@
+a1,10,false,true,0,0
+b1,20,true,false,2,5
+c1,12,false,true,1,1
+d1,2,true,false,1,0
