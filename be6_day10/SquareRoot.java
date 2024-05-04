@@ -15,15 +15,15 @@ public class SquareRoot {
 		} else {
 		
 			// Use concept of binary search
-			int low = 1, high = n;
+			float low = 1, high = n;
 			while (low <= high) {
 				float mid = (low+high)/2;
 				if (mid*mid == n) {
 					return fm.format("%.2f", mid);
 				} else if (mid*mid > n) {
-					high --;
+					high = mid;
 				} else if(mid*mid < n) {
-					low ++;
+					low = mid;
 				}
 			}
 		}
