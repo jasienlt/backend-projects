@@ -17,6 +17,7 @@ public class MinimumGap {
 			
 			else {
 				min_dist = Math.min(min_dist, i - map.get(arr[i]));
+				map.put(arr[i], i);
 			}
 		}
 		
