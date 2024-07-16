@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Registration</title>
+    
+</head>
+<body>
+<h1>Register form</h1>
+
+<form id="registration" method="POST" action="confirm.jsp">
+
+<label for="username">Username:</label><br>
+<input type="text" id="username" name="username"><br><br>
+
+<label for="password">Password:</label><br>
+<input type="password" id="password" name="password"><br><br>
+
+<label>Gender:</label><br>
+<input type="radio" id="male" name="gender" value="male">
+<label for="male">Male</label><br>
+<input type="radio" id="female" name="gender" value="female">
+<label for="female">Female</label><br><br>
+
+<label>Hobbies:</label><br>
+<input type="checkbox" id="music" name="hobbies" value="music">
+<label for="music">Music</label><br>
+<input type="checkbox" id="sport" name="hobbies" value="sport">
+<label for="sport">Sport</label><br>
+<input type="checkbox" id="reading" name="hobbies" value="reading">
+<label for="reading">Reading</label><br><br>
+
+<label for="city">City:</label><br>
+<select id="city" name="city">
+	<option value="HCM">HCM</option>
+	<option value="HN">HN</option>
+	<option value="MEL">MEL</option>
+</select><br><br>
+
+<button type="submit">Submit - JSP</a></button>
+<output id="output"></output>
+<button type="submit" formaction="result.html">Submit - SessionStorage</a></button>
+</form>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+	const form = document.querySelector("registration")
+
+    form.addEventListener("submit", (event) => {
+    	event.preventDefault();
+        const formData = new FormData(form)
+        var all_hobbies = formData.getAll("hobbies");
+        formData.append("all_hobbies", all_hobbies)
+       	
+        const json = JSON.stringify(formData.entries())
+
+        sessionStorage.setItem('userInfo',json);
+        
+    })
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script>
+	console.log(JSON.parse(sessionStorage.getItem('userInfo')));
+	
+</script>
+</head>
+<body>
+<form action="finish.jsp" method="POST">
+	<p>Username: <span id="userName"></span>
+	</p><br>
+	<input type="text" name="username" value=userName hidden=true>
+	
+	<p>Password: <span id="passWord"></span>
+	</p><br>
+	<input type="password" name="password" value={param.password} hidden=true>
+	
+	<p>Gender: <span id="gender"></span>
+	</p><br>
+	<input type="gender" name="gender" value={param.gender} hidden=true>
+
+	
+	<p>City: <span id="city"></span>
+	</p><br>
+	<input type="city" name="city" value={param.city} hidden=true>
+	
+	<button type="submit" value="submit"> Confirmed </button>
+</form>
+</body>
+</html>
